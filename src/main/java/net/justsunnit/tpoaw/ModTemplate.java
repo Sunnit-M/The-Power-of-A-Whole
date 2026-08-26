@@ -46,11 +46,11 @@ public class ModTemplate {
 		 *///?}
 	}
 
-	private static Identifier id(String path) {
+	public static Identifier id(String path) {
 		return Identifier.fromNamespaceAndPath(MOD_ID, path);
 	}
 
-	private static Identifier id(String namespace, String path) {
+	public static Identifier id(String namespace, String path) {
 		return Identifier.fromNamespaceAndPath(namespace, path);
 	}
 }
