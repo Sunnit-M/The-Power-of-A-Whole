@@ -30,4 +30,8 @@ public class CommandInputArgument implements ArgumentType<String> {
 		}
 		return Suggestions.empty();
 	}
+
+	public static CommandInputArgument arg(){
+		return new CommandInputArgument();
+	}
 }

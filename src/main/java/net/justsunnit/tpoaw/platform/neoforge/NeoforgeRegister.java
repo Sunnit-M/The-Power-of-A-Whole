@@ -3,6 +3,7 @@ package net.justsunnit.tpoaw.platform.neoforge;
 //? neoforge {
 
 /*import net.justsunnit.tpoaw.ModTemplate;
+import net.justsunnit.tpoaw.commands.ProposeCommand;
 import net.justsunnit.tpoaw.commands.VoteCommand;
 import net.justsunnit.tpoaw.commands.aurguments.YesNoArgument;
 import net.minecraft.commands.synchronization.ArgumentTypeInfo;
@@ -29,6 +30,7 @@ public class NeoforgeRegister {
 	@SubscribeEvent
 	public static void RegisterCommands(RegisterCommandsEvent event){
 		VoteCommand.register(event.getDispatcher(),event.getBuildContext(),event.getCommandSelection());
+		ProposeCommand.register(event.getDispatcher(),event.getBuildContext(),event.getCommandSelection());
 	}
 }
 *///? }
