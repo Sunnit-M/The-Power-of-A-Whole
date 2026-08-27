@@ -12,7 +12,6 @@ import net.neoforged.neoforge.common.NeoForge;
 public class NeoforgeEntrypoint {
 
 	public NeoforgeEntrypoint(IEventBus iEventBus) {
-		if (FMLLoader.getCurrent().getDist().isClient()) return;
 		NeoforgeRegister.ARGUMENT_TYPES.register(iEventBus);
 		NeoForge.EVENT_BUS.register(NeoforgeRegister.class);
 		ModTemplate.onInitialize();

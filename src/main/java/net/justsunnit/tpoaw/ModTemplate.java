@@ -10,8 +10,6 @@ import org.slf4j.LoggerFactory;
 import net.justsunnit.tpoaw.platform.fabric.FabricPlatform;
 //?} neoforge {
 /*import net.justsunnit.tpoaw.platform.neoforge.NeoforgePlatform;
- *///?} forge {
-/*import net.justsunnit.tpoaw.platform.forge.ForgePlatform;
  *///?}
 
 @SuppressWarnings("LoggingSimilarMessage")
@@ -26,11 +24,6 @@ public class ModTemplate {
 
 	public static void onInitialize() {
 		LOGGER.info("Initializing {} on {}", MOD_ID, ModTemplate.xplat().loader());
-		LOGGER.debug("{}: { version: {}; friendly_name: {} }", MOD_ID, MOD_VERSION, MOD_FRIENDLY_NAME);
-	}
-
-	public static void onInitializeClient() {
-		LOGGER.info("Initializing {} Client on {}", MOD_ID, ModTemplate.xplat().loader());
 		LOGGER.debug("{}: { version: {}; friendly_name: {} }", MOD_ID, MOD_VERSION, MOD_FRIENDLY_NAME);
 	}
 
@@ -50,7 +43,4 @@ public class ModTemplate {
 		return Identifier.fromNamespaceAndPath(MOD_ID, path);
 	}
 
-	public static Identifier id(String namespace, String path) {
-		return Identifier.fromNamespaceAndPath(namespace, path);
-	}
 }
