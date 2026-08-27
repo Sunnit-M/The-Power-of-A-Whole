@@ -2,15 +2,15 @@ package net.justsunnit.tpoaw.platform.fabric;
 
 //? fabric {
 
+import net.fabricmc.api.DedicatedServerModInitializer;
 import net.justsunnit.tpoaw.ModTemplate;
 import dev.kikugie.fletching_table.annotation.fabric.Entrypoint;
-import net.fabricmc.api.ModInitializer;
 
 @Entrypoint("main")
-public class FabricEntrypoint implements ModInitializer {
+public class FabricEntrypoint implements DedicatedServerModInitializer {
 
 	@Override
-	public void onInitialize() {
+	public void onInitializeServer() {
 		ModTemplate.onInitialize();
 		FabricRegister.Register();
 	}
