@@ -43,4 +43,5 @@ public class ModTemplate {
 		return Identifier.fromNamespaceAndPath(MOD_ID, path);
 	}
 
+	public static boolean debug() {return xplat().isDevelopmentEnvironment();}
 }
