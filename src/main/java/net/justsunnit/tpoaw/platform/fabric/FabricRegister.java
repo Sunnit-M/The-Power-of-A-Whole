@@ -3,7 +3,9 @@ package net.justsunnit.tpoaw.platform.fabric;
 
 import net.fabricmc.fabric.api.command.v2.ArgumentTypeRegistry;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.justsunnit.tpoaw.ModTemplate;
+import net.justsunnit.tpoaw.backend.Ticker;
 import net.justsunnit.tpoaw.commands.ProposeCommand;
 import net.justsunnit.tpoaw.commands.VoteCommand;
 import net.justsunnit.tpoaw.commands.aurguments.CommandInputArgument;
@@ -19,6 +21,10 @@ public class FabricRegister {
 				, SingletonArgumentInfo.contextFree(YesNoArgument::arg));
 		ArgumentTypeRegistry.registerArgumentType(ModTemplate.id("commandinput"), CommandInputArgument.class
 				, SingletonArgumentInfo.contextFree(CommandInputArgument::arg));
+
+		ServerTickEvents.START_SERVER_TICK.register(server -> {
+			Ticker.tick();
+		});
 	}
 }
 //? }

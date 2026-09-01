@@ -2,7 +2,9 @@ package net.justsunnit.tpoaw.commands;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.context.CommandContext;
+import net.justsunnit.tpoaw.backend.ActiveVote;
 import net.justsunnit.tpoaw.commands.aurguments.YesNoArgument;
+import net.justsunnit.tpoaw.commands.aurguments.YesNoEnum;
 import net.minecraft.commands.CommandBuildContext;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
@@ -15,6 +17,13 @@ public class VoteCommand {
 	}
 
 	private static int run(CommandContext<CommandSourceStack> context) {
-		return 0;
+		if (ActiveVote.isActive()) {
+			ActiveVote.vote(context.getArgument("answer", YesNoEnum.class).equals(YesNoEnum.YES),
+					context.getSource().getPlayer().getUUID());
+			return 1;
+		}
+		else {
+			return 0;
+		}
 	}
 }
