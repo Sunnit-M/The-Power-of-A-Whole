@@ -19,8 +19,6 @@ public class FabricRegister {
 
 		ArgumentTypeRegistry.registerArgumentType(ModTemplate.id("yes_no"), YesNoArgument.class
 				, SingletonArgumentInfo.contextFree(YesNoArgument::arg));
-		ArgumentTypeRegistry.registerArgumentType(ModTemplate.id("commandinput"), CommandInputArgument.class
-				, SingletonArgumentInfo.contextFree(CommandInputArgument::arg));
 
 		ServerTickEvents.START_SERVER_TICK.register(server -> {
 			Ticker.tick();
