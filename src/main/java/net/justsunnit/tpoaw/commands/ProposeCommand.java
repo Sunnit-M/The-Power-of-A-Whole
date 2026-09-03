@@ -32,10 +32,7 @@ public class ProposeCommand {
 		}
 		else {
 			ServerPlayer player = context.getSource().getPlayer();
-			ActiveVote.newPoll(player, context.getArgument("command", String.class)
-					, context.getSource().getServer());
-			context.getSource().getServer().getPlayerList().getPlayers().forEach(p ->
-					p.sendSystemMessage(Component.literal("A Command has been proposed by:" + context.getSource().getPlayer().getPlainTextName())));
+			ActiveVote.newPoll(player, context.getArgument("command", String.class), context.getSource().getServer());
 			return 1;
 		}
 	}
